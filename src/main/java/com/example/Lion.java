@@ -1,7 +1,13 @@
 package com.example;
 
+import org.junit.runner.RunWith;
+import org.mockito.Mock;
+import org.mockito.Mockito;
+import org.mockito.junit.MockitoJUnitRunner;
+
 import java.util.List;
 
+@RunWith(MockitoJUnitRunner.class)
 public class Lion {
 
     boolean hasMane;
@@ -16,9 +22,13 @@ public class Lion {
         }
     }
 
-    Feline feline = new Feline();
+    //Изолируем класс Lion от класса Feline
+    @Mock
+    Feline feline;
+    //Feline feline = new Feline();
 
     public int getKittens() {
+        Mockito.when(feline.getKittens()).thenReturn(1);
         return feline.getKittens();
     }
 
