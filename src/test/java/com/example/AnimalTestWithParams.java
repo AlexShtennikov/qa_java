@@ -28,7 +28,7 @@ import static org.junit.Assert.assertEquals;
         }
 
         @Test
-        public void getFood() throws Exception {
+        public void getFood_ExpectedArgs_ShouldReturnExpectedValue() throws Exception {
             Animal animal = new Animal();
             List<String> actualResult = animal.getFood(currentValue);
             assertEquals(expectedValue, actualResult);

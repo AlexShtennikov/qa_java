@@ -27,7 +27,7 @@ public class LionTestWithParam {
     }
 
     @Test
-    public void shouldBackCorrectBoolean() throws Exception {
+    public void doesHaveMane_NoArgs_shouldReturnExpectedValue() throws Exception {
         Lion lion = new Lion(sex, feline);
         boolean actualResult = lion.doesHaveMane();
         assertEquals(expectedValue, actualResult);
