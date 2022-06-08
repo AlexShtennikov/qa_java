@@ -1,18 +1,13 @@
 package com.example;
 
-import org.junit.runner.RunWith;
-import org.mockito.Mock;
-import org.mockito.Mockito;
-import org.mockito.junit.MockitoJUnitRunner;
-
 import java.util.List;
 
-@RunWith(MockitoJUnitRunner.class)
 public class Lion {
 
     boolean hasMane;
+    Feline feline;
 
-    public Lion(String sex) throws Exception {
+    public Lion(String sex, Feline feline) throws Exception {
         if ("Самец".equals(sex)) {
             hasMane = true;
         } else if ("Самка".equals(sex)) {
@@ -20,15 +15,11 @@ public class Lion {
         } else {
             throw new Exception("Используйте допустимые значения пола животного - самей или самка");
         }
+
+        this.feline = feline;
     }
 
-    //Изолируем класс Lion от класса Feline
-    @Mock
-    Feline feline;
-    //Feline feline = new Feline();
-
     public int getKittens() {
-        Mockito.when(feline.getKittens()).thenReturn(1);
         return feline.getKittens();
     }
 

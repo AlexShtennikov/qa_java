@@ -12,14 +12,14 @@ public class CatTest {
     Cat cat = new Cat(feline);
 
     @Test
-    public void getSound() {
+    public void shouldBackCorrectSound() {
         String expectedResult = "Мяу";
         String actualResult = cat.getSound();
         assertEquals(expectedResult, actualResult);
     }
 
     @Test
-    public void getFood() throws Exception {
+    public void shouldBackCorrectList() throws Exception {
         List<String> expectedResult = List.of("Животные", "Птицы", "Рыба");
         List<String> actualResult = cat.getFood();
         assertEquals(expectedResult, actualResult);
