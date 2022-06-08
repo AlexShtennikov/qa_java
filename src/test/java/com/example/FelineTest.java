@@ -1,6 +1,6 @@
 package com.example;
 
-import org.junit.Assert;
+
 import org.junit.Test;
 
 import java.util.List;
@@ -9,10 +9,9 @@ import static org.junit.Assert.*;
 
 public class FelineTest {
 
-    Feline feline = new Feline();
-
     @Test
     public void shouldBackCorrectList() throws Exception {
+        Feline feline = new Feline();
         List<String> expectedResult = List.of("Животные", "Птицы", "Рыба");
         List<String> actualResult = feline.eatMeat();
         assertEquals(expectedResult, actualResult);
@@ -20,6 +19,7 @@ public class FelineTest {
 
     @Test
     public void shouldBackRightFamily() {
+        Feline feline = new Feline();
         String expectedResult = "Кошачьи";
         String actualResult = feline.getFamily();
         assertEquals(expectedResult, actualResult);
@@ -27,6 +27,7 @@ public class FelineTest {
 
     @Test
     public void shouldBeCorrectNum() {
+        Feline feline = new Feline();
         int expectedResult = 1;
         int actualResult = feline.getKittens();
         assertEquals(expectedResult, actualResult);
@@ -34,6 +35,7 @@ public class FelineTest {
 
     @Test
     public void ShouldBeCorrectNumIfUseParam() {
+        Feline feline = new Feline();
         int expectedResult = 1;
         int actualResult = feline.getKittens(1);
         assertEquals(expectedResult, actualResult);

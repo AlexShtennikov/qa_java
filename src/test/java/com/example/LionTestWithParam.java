@@ -9,6 +9,7 @@ import static org.junit.Assert.assertEquals;
 @RunWith(Parameterized.class)
 public class LionTestWithParam {
 
+    Feline feline;
     private final String sex;
     private final boolean expectedValue;
 
@@ -27,7 +28,6 @@ public class LionTestWithParam {
 
     @Test
     public void shouldBackCorrectBoolean() throws Exception {
-        Feline feline = new Feline();
         Lion lion = new Lion(sex, feline);
         boolean actualResult = lion.doesHaveMane();
         assertEquals(expectedValue, actualResult);

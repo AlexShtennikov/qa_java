@@ -3,17 +3,18 @@ package com.example;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.mockito.Mock;
+import org.mockito.Mockito;
 import org.mockito.junit.MockitoJUnitRunner;
 
 import java.util.List;
 
 import static org.junit.Assert.*;
 
-//@RunWith(MockitoJUnitRunner.class)
+@RunWith(MockitoJUnitRunner.class)
 public class LionTest {
 
-    //@Mock
-    Feline feline = new Feline();
+    @Mock
+    Feline feline;
 
     @Test
     public void shouldBeCorrectMessageOfException() {
@@ -25,6 +26,9 @@ public class LionTest {
             exception = ex;
         }
 
+        boolean expectedValue = true;
+        assertEquals(expectedValue, exception != null);
+
         String expectedResult = "Используйте допустимые значения пола животного - самей или самка";
         assertEquals(expectedResult, exception.getMessage());
     }
@@ -35,6 +39,7 @@ public class LionTest {
         Lion lion = new Lion("Самец", feline);
 
         int expectedResult = 1;
+        Mockito.when(feline.getKittens()).thenReturn(1);
         int actualResult = lion.getKittens();
         assertEquals(expectedResult, actualResult);
 
@@ -44,6 +49,7 @@ public class LionTest {
     public void shouldBackCorrectList() throws Exception {
         Lion lion = new Lion("Самка", feline);
         List<String> expectedResult = List.of("Животные", "Птицы", "Рыба");
+        Mockito.when(feline.getFood("Хищник")).thenReturn(List.of("Животные", "Птицы", "Рыба"));
         List<String> actualResult = lion.getFood();
         assertEquals(expectedResult, actualResult);
     }
