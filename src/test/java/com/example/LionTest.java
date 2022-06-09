@@ -17,7 +17,7 @@ public class LionTest {
     Feline feline;
 
     @Test
-    public void designerLion_WhenFirstArgIsNull_ThrowException() {
+    public void designerLion_UnknownAnimal_ThrowException() {
 
         Exception exception = null;
         try {
@@ -34,7 +34,7 @@ public class LionTest {
     }
 
     @Test
-    public void getKittens_NoArgs_shouldReturnNum1() throws Exception {
+    public void getKittens_shouldReturnCorrectNum() throws Exception {
 
         Lion lion = new Lion("Самец", feline);
 
@@ -46,7 +46,7 @@ public class LionTest {
     }
 
     @Test
-    public void getFood_NoArgs_shouldReturnExpectedValue() throws Exception {
+    public void getFood_shouldReturnCorrectList() throws Exception {
         Lion lion = new Lion("Самка", feline);
         List<String> expectedResult = List.of("Животные", "Птицы", "Рыба");
         Mockito.when(feline.getFood("Хищник")).thenReturn(List.of("Животные", "Птицы", "Рыба"));

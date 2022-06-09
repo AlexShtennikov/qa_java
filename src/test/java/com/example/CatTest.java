@@ -16,7 +16,7 @@ public class CatTest {
     Feline feline;
 
     @Test
-    public void getSound_NoArgs_ShouldReturnExpectedValue() {
+    public void getSound_ShouldReturnCorrectString() {
         Cat cat = new Cat(feline);
         String expectedResult = "Мяу";
         String actualResult = cat.getSound();
@@ -24,7 +24,7 @@ public class CatTest {
     }
 
     @Test
-    public void getFood_NoArgs_ShouldReturnExpectedValue() throws Exception {
+    public void getFood_ShouldReturnCorrectList() throws Exception {
         Cat cat = new Cat(feline);
         Mockito.when(feline.eatMeat()).thenReturn(List.of("Животные", "Птицы", "Рыба"));
         List<String> expectedResult = List.of("Животные", "Птицы", "Рыба");
