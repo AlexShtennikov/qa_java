@@ -28,7 +28,7 @@ import static org.junit.Assert.assertEquals;
         }
 
         @Test
-        public void getFood_KnownArgs_ShouldReturnCorrectList() throws Exception {
+        public void getFoodKnownArgsShouldReturnCorrectList() throws Exception {
             Animal animal = new Animal();
             List<String> actualResult = animal.getFood(currentValue);
             assertEquals(expectedValue, actualResult);

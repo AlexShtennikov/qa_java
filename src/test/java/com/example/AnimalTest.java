@@ -8,7 +8,7 @@ public class AnimalTest {
 
 
     @Test
-    public void getFood_UnknownAnimal_ThrowException() {
+    public void getFoodUnknownAnimalThrowException() {
 
         Animal animal = new Animal();
 
@@ -27,7 +27,7 @@ public class AnimalTest {
     }
 
     @Test
-    public void getFamily_ShouldReturnСorrectString() {
+    public void getFamilyShouldReturnСorrectString() {
 
         Animal animal = new Animal();
         String expectedResult = "Существует несколько семейств: заячьи, беличьи, мышиные, кошачьи, псовые, медвежьи, куньи";

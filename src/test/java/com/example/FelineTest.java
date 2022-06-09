@@ -10,7 +10,7 @@ import static org.junit.Assert.*;
 public class FelineTest {
 
     @Test
-    public void eatMeat_KnownArgs_ShouldReturnCorrectList() throws Exception {
+    public void eatMeatKnownArgsShouldReturnCorrectList() throws Exception {
         Feline feline = new Feline();
         List<String> expectedResult = List.of("Животные", "Птицы", "Рыба");
         List<String> actualResult = feline.eatMeat();
@@ -18,7 +18,7 @@ public class FelineTest {
     }
 
     @Test
-    public void getFamily_ShouldReturnCorrectString() {
+    public void getFamilyShouldReturnCorrectString() {
         Feline feline = new Feline();
         String expectedResult = "Кошачьи";
         String actualResult = feline.getFamily();
@@ -26,7 +26,7 @@ public class FelineTest {
     }
 
     @Test
-    public void getKittens_ShouldReturnCorrectNum() {
+    public void getKittensShouldReturnCorrectNum() {
         Feline feline = new Feline();
         int expectedResult = 1;
         int actualResult = feline.getKittens();
@@ -34,7 +34,7 @@ public class FelineTest {
     }
 
     @Test
-    public void getKittens_ArgsIs1_ShouldReturnCorrectNum() {
+    public void getKittensArgsIs1ShouldReturnCorrectNum() {
         Feline feline = new Feline();
         int expectedResult = 1;
         int actualResult = feline.getKittens(1);
